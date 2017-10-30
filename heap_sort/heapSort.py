@@ -1,18 +1,17 @@
 #! /usr/bin/python3
 
 
-import math
-
 def heap_sort (array):
     """ sort list using the heap sort algorithm with max heap.
+
     test for complete heap with uneven number of elements
     >>> heap_sort([10, 12, 3, 4, 8, 9, 12, 14, 18, 20, 7, 11, 19, 23, 27])
-    [27, 20, 23, 18, 12, 19, 12, 14, 4, 8, 7, 11, 9, 3, 10]
+    [3, 4, 7, 8, 9, 10, 11, 12, 12, 14, 18, 19, 20, 23, 27]
 
 
-    # test for incomplete heap with even number of elements
-    # >>> heap_sort([@todo])
-    # [@TODO]
+    test for incomplete heap with even number of elements
+    >>> heap_sort([10, 12, 3, 4, 8, 9, 12, 14, 18, 20, 7, 11])
+    [3, 4, 7, 8, 9, 10, 11, 12, 12, 14, 18, 20]
 
     test for empty list
     >>> heap_sort([])
@@ -145,6 +144,6 @@ def repair_heap(array, start_index, heap_size):
 
 if __name__ == "__main__":
     # Create an unsorted list of integers.
-    numbers = [10, 4, 1, 5, 2, 3, 11, 3, 9]
+    numbers = [10, 4, 1, 5, 2, 3, 11, 3, 9, 12 ,15 ,17, 11, 166, 16, 2]
     # Sort the list.
     print(heap_sort(numbers))
