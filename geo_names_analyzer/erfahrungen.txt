@@ -1,0 +1,26 @@
+Performance Results:
+Performance ouptut using "compute_most_frequent_city_names_by_sorting":
+Top frequent cities wordlwide:
+San Antonio:	162
+San Isidro:	142
+La Esperanza:	135
+ 
+runtime using sort: 9.784158 s 
+
+Performance ouptut using "compute_most_frequent_city_names_by_sorting":
+Top frequent cities wordlwide:
+San Antonio:	162
+San Isidro:	142
+La Esperanza:	135
+ 
+runtime using sort: 9.837199 s 
+___________________________________________________________________________________
+
+Discussion:
+Using the given implementation both algorithms have nearly the same runtime.
+I expected the algorithm using associative arrays (map/dictionary) to be way faster.
+
+A reason might be that the functions are implemented in a way that they don't simple count the occurance. They return a already sorted list containing the highest ranked city at [0].
+Due to this the function both operate in O (max{n*logn,n})= O (n*logn).
+
+

@@ -1,0 +1,16 @@
+Performance ouptut using "compute_most_frequent_city_names_by_sorting":
+Top frequent cities wordlwide:
+Neuenkirchen:	7
+Altdorf:	4
+Hausen:	4
+ 
+runtime using sort: 9.702666 s 
+
+Performance ouptut using "compute_most_frequent_city_names_by_sorting":
+Top frequent cities wordlwide:
+Neuenkirchen:	7
+Hausen:	4
+Neukirchen:	4
+ 
+runtime using sort: 9.481102 s 
+
