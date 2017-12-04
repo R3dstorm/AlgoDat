@@ -30,6 +30,8 @@ def read_info_from_file(file):
     localLine = 0
     localities = []
 
+    startTime = time.clock()
+
     inputFile = open(file, "r")
     for line in inputFile:
         localLine = inputFile.readline()
@@ -38,6 +40,9 @@ def read_info_from_file(file):
             and int(lst[inhabitants_pos]) > 0)\
             and lst[localities_country_code_pos] == 'DE':
             localities.append(lst[localities_pos])
+
+    stopTime = time.clock()
+    print ("runtime of reading file: %f " % (stopTime-startTime))
 
     return localities
 

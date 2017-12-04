@@ -1,0 +1,18 @@
+The results are making sense.
+Since we hold it evident that the given hashfunction-family is c-universal.
+So the output for p>||U|| and p>m is spread evenly across all buckets.
+Therefore the estimated size of each bucket is 1. So is c=0.
+
+When using a small prime number the hash function is no longer c-universal.
+Using the random sets it was not possible to generate a completely degenerated table (C=m).
+But it was possible to create up to  
+
+For running with p=101 the result is:
+mean of c: 0.000000
+max of c: 0.000000
+min of c: 0.000000
+
+For running with p=10 the result is:
+mean of c: 6.184048
+max of c: 11.666667
+min of c: 5.000000
