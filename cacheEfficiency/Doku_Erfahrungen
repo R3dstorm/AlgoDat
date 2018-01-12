@@ -1,0 +1,7 @@
+Erstellen des Diagramms:
+gnuplot ->
+plot 'runtime_A.txt' with linespoint,'runtime_B.txt' with linespoint
+
+Exercise 4:
+The results show that using a small number of input data the insertion into the has table works faster because there are no loops in the algorithm and the runtime only grows like funktions e thetta(n). 
+For a higher number of input data the better locaility of the data using quicksort pays off. Data computet consecutively is located in neighbored memory cells. Wheras the hash table algorithm jumps through a big array of memory ranging over several memory blocks with lots of cache misses while working.
