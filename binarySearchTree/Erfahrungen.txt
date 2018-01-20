@@ -1,4 +1,4 @@
 
 The recursive loop "to_string_slicing" was a bit difficult: 
 When the function was returning from the last recursive call it restarted cycling .
-This was due to explicitly incrementing list depth by "current = current.leftChild" instead of taking the incrementation into the recursive function call "self.to_string_slicing(current.rightChild, output_string)". Using this bugfix "to_string_slicing" always returns back to the correct depth of the linked list.
+This was due to explicitly incrementing list depth by "current = current.leftChild" instead of taking the incrementation into the recursive function call "self.to_string_slicing(current.rightChild, output_string)". Using this bug fix "to_string_slicing" always returns back to the correct depth of the linked list.
