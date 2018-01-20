@@ -5,10 +5,6 @@ import time
 import sys
 import argparse
 
-def plot_runtimes():
-    return 0
-
-
 # Class handling hash table
 class HashTable:
 
@@ -136,6 +132,3 @@ if __name__ == "__main__":
             elif args.algorithm == "B":
                 print("%d \t %d" %(2**i, runtime[1]))
 
-    plot_runtimes()
-    blub = generate_random_numbers(10)
-    blub[0] = 1
