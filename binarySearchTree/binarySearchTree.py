@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 
 
+import argparse
+import random
+import timeit
+
 class Node:
     """ Implements a single node of a linked list.
     """
@@ -47,6 +51,7 @@ class BinarySearchTree:
         self._head = Node(None, None)
         self._last = self._head  # Is there a last element defined in a  BST with only one list?
         self._itemCount = 0
+        self._depth = 0
 
     def insert(self, insert_key, insert_element):
         """ Inserts a new node at the correct position in the tree.
@@ -58,6 +63,7 @@ class BinarySearchTree:
         >>> searchTree.to_string()
         '[(1, "red"), left: null, right: [(4, "blue"), left: null, right: null]]'
         """
+        current_depth = 1
         insert_node = Node(insert_key, insert_element)
         # Check if list is empty
         if self.is_empty():  # self._last == self._head:
@@ -70,21 +76,27 @@ class BinarySearchTree:
                 if insert_key < current.key:
                     if current.leftChild is None:
                         current.leftChild = insert_node
+                        current_depth +=1
                         break;
                     else:
                         current = current.leftChild
+                        current_depth += 1
 
                 elif insert_key > current.key:
                     if current.rightChild is None:
                         current.rightChild = insert_node
+                        current_depth += 1
                         break;
                     else:
                         current = current.rightChild
+                        current_depth += 1
 
                 else:  # Key is already inserted -> only change element
                     current.element = insert_element
                     return
         self._itemCount += 1
+        if current_depth > self._depth:
+            self._depth = current_depth
 
     def lookup(self, search_key):
         """Serach for given key. Return element with next bigger key if key is not found or reutrn "not found" if key is not found and there is no element with a bigger key.
@@ -158,6 +170,27 @@ class BinarySearchTree:
 
         return self._itemCount
 
+    def depth(self):
+        """ Returns the current depth of the tree (! remove is not supported)
+        :return: number of layers in tree
+        >>> searchTree = BinarySearchTree()
+        >>> searchTree.depth()
+        0
+        >>> searchTree.insert(1, '"red"')
+        >>> searchTree.insert(4, '"blue"')
+        >>> searchTree.insert(3, '"yellow"')
+        >>> searchTree.depth()
+        3
+        >>> searchTree.insert(5, '"pink"')
+        >>> searchTree.depth()
+        3
+        >>> searchTree.insert(6, '"strawberry"')
+        >>> searchTree.depth()
+        4
+        """
+        return self._depth
+
+
     def is_empty(self):
         """ Returns if the tree is empty (=true)
         :return: =true for empty tree
@@ -218,15 +251,86 @@ class BinarySearchTree:
         return output_string
 
 
+def setup_argument_parser():
+    """Setup argparse parser."""
+    help_description = """
+    This program implements a binary search tree
+    and measures the runtime for insertion operations.
+    The runtime can be output for different conditions:
+
+    -inputSize: number of elements to input [n]
+        default: n = 1 ... 1e+6
+    -inputOrder: input numbers in ordered or unordered way [ordered/unordered]
+        default: inputOrder = [ordered]
+    -output: selects whether [runtime] is output or [treeDepth]
+    """
+
+    # Define argument parser.
+    p = argparse.ArgumentParser(add_help=False,
+                                prog="binaraySearchTree.py",
+                                usage="%(prog)s -inputSize -inputOrder",
+                                description=help_description,
+                                formatter_class=argparse.RawTextHelpFormatter)
+    # Define an argument group.
+    parse_group_args = p.add_argument_group("Arguments")
+    # Define arguments.
+    parse_group_args.add_argument("-h", "--help",
+                                  action="help",
+                                  help="Print help message")
+    parse_group_args.add_argument("-inputSize",
+                                  dest="input_size",
+                                  type=int,
+                                  help="number of elements to input [n]",
+                                  required = True)
+    parse_group_args.add_argument("-inputOrder",
+                                  dest="input_order",
+                                  choices=["ordered", "unordered"],
+                                  default='ordered',
+                                  help="option to order input",
+                                  required=False)
+    parse_group_args.add_argument("-output",
+                                  dest="output",
+                                  choices=["runtime", "treeDepth"],
+                                  default='runtime',
+                                  help="option to specify output",
+                                  required=False)
+    return p
+
+
+def generate_random_numbers(n):
+    return  random.sample(range(1, n+1), n)
+
+
+def generate_numbers(n):
+    return [a for a in range(1,n+1)]
+
+
+def insert_data(data):
+    tree = BinarySearchTree()
+    for i in range(0,len(data)):
+        tree.insert(data[i], "banana")
+    #print ("%s" %tree.to_string())
+    return tree.depth()
+
+
 if __name__ == "__main__":
-    searchTree = BinarySearchTree()
-    searchTree.insert(5, '"five"')
-    searchTree.insert(1, '"one"')
-    searchTree.insert(2, '"two"')
-    searchTree.insert(3, '"three"')
-    searchTree.insert(6, '"six"')
+    # Setup argparse and define available command line arguments.
+    parser = setup_argument_parser()
+    # Read the command line arguments.
+    args = parser.parse_args()
 
-    string = searchTree.to_string()
-    string = searchTree.lookup(15)
+    #meassure runtime:
+    samples = 10  # The number of sample points to measure TODO change this to exp 2**n
+    factor = args.input_size // samples
 
-    test = 1
+    for i in range(1, samples + 1):
+        data_ordered = generate_numbers(i * factor)
+        data = generate_random_numbers(i * factor)
+        if args.output == 'runtime':
+            runtime_ordered = timeit.timeit(stmt=lambda: insert_data(data_ordered), number=1)
+            runtime = timeit.timeit(stmt=lambda: insert_data(data), number=1)
+            print("%d \t %.5f \t %.5f" % ((i * factor), runtime_ordered, runtime))
+        else:
+            depth_ordered = insert_data(data_ordered)
+            depth = insert_data(data)
+            print('%d \t %d \t %d' % i * factor, depth_ordered, depth)

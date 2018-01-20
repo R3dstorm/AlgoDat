@@ -14,9 +14,11 @@
       <file leaf-file-name="binarySearchTree.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/binarySearchTree.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="221" column="35" lean-forward="true" selection-start-line="221" selection-start-column="35" selection-end-line="221" selection-end-column="35" />
-              <folding />
+            <state relative-caret-position="223">
+              <caret line="308" column="29" lean-forward="true" selection-start-line="308" selection-start-column="29" selection-end-line="308" selection-end-column="29" />
+              <folding>
+                <element signature="e#21#36#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -30,6 +32,12 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>_itemCount</find>
+      <find>measure_runtime</find>
+    </findStrings>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -39,8 +47,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="477" />
-    <option name="y" value="-4" />
+    <option name="x" value="210" />
+    <option name="y" value="16" />
     <option name="width" value="928" />
     <option name="height" value="865" />
   </component>
@@ -90,7 +98,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.DocTests">
+  <component name="RunManager" selected="Python.Python">
     <configuration name="Python" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -104,7 +112,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="binarySearchTree" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/binarySearchTree.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="PARAMETERS" value="-inputSize 1000 -output runtime" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -167,34 +175,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DocTests - 2018.01.20 at 16h 45m 20s.xml">
+    <history-entry file="DocTests - 2018.01.20 at 21h 41m 21s.xml">
       <configuration name="DocTests" configurationId="tests" />
     </history-entry>
-    <history-entry file="DocTests - 2018.01.20 at 16h 45m 56s.xml">
+    <history-entry file="DocTests - 2018.01.20 at 21h 42m 48s.xml">
       <configuration name="DocTests" configurationId="tests" />
     </history-entry>
-    <history-entry file="DocTests - 2018.01.20 at 16h 47m 35s.xml">
+    <history-entry file="DocTests - 2018.01.20 at 21h 43m 45s.xml">
       <configuration name="DocTests" configurationId="tests" />
     </history-entry>
-    <history-entry file="DocTests - 2018.01.20 at 16h 47m 45s.xml">
+    <history-entry file="DocTests - 2018.01.20 at 21h 53m 29s.xml">
       <configuration name="DocTests" configurationId="tests" />
     </history-entry>
-    <history-entry file="DocTests - 2018.01.20 at 16h 52m 54s.xml">
+    <history-entry file="DocTests - 2018.01.20 at 21h 53m 31s.xml">
       <configuration name="DocTests" configurationId="tests" />
     </history-entry>
-    <history-entry file="DocTests - 2018.01.20 at 16h 54m 36s.xml">
+    <history-entry file="DocTests - 2018.01.20 at 21h 55m 48s.xml">
       <configuration name="DocTests" configurationId="tests" />
     </history-entry>
-    <history-entry file="DocTests - 2018.01.20 at 16h 54m 41s.xml">
+    <history-entry file="DocTests - 2018.01.20 at 21h 55m 50s.xml">
       <configuration name="DocTests" configurationId="tests" />
     </history-entry>
-    <history-entry file="DocTests - 2018.01.20 at 16h 54m 44s.xml">
+    <history-entry file="DocTests - 2018.01.20 at 21h 56m 43s.xml">
       <configuration name="DocTests" configurationId="tests" />
     </history-entry>
-    <history-entry file="DocTests - 2018.01.20 at 16h 59m 23s.xml">
+    <history-entry file="DocTests - 2018.01.20 at 21h 56m 48s.xml">
       <configuration name="DocTests" configurationId="tests" />
     </history-entry>
-    <history-entry file="DocTests - 2018.01.20 at 16h 59m 28s.xml">
+    <history-entry file="DocTests - 2018.01.20 at 21h 56m 55s.xml">
       <configuration name="DocTests" configurationId="tests" />
     </history-entry>
   </component>
@@ -207,7 +215,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34625" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2175" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2175" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -230,61 +238,29 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/binarySearchTree.py</url>
-          <line>229</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/binarySearchTree.py</url>
-          <line>228</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/binarySearchTree.py</url>
-          <line>128</line>
+          <line>140</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/binarySearchTree.py</url>
+          <line>325</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/binarySearchTree.py</url>
+          <line>331</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="8" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/lib/python3/dist-packages/apport_python_hook.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Erfahrungen.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="230" lean-forward="false" selection-start-line="3" selection-start-column="230" selection-end-line="3" selection-end-column="230" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3.5/doctest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="1587" column="0" lean-forward="false" selection-start-line="1587" selection-start-column="0" selection-end-line="1587" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/docrunner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3.5/posixpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1479">
-          <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -297,11 +273,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/lib/python3.5/random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="314" column="0" lean-forward="false" selection-start-line="314" selection-start-column="0" selection-end-line="314" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.5/posixpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/docrunner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.5/doctest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="369" column="0" lean-forward="false" selection-start-line="369" selection-start-column="0" selection-end-line="369" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.5/timeit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="212" column="0" lean-forward="false" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3/dist-packages/apport_python_hook.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/binarySearchTree.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="221" column="35" lean-forward="true" selection-start-line="221" selection-start-column="35" selection-end-line="221" selection-end-column="35" />
-          <folding />
+        <state relative-caret-position="223">
+          <caret line="308" column="29" lean-forward="true" selection-start-line="308" selection-start-column="29" selection-end-line="308" selection-end-column="29" />
+          <folding>
+            <element signature="e#21#36#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
