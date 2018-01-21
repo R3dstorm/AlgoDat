@@ -1,0 +1,8 @@
+Commands for gnuplot:
+
+
+plot 'treeDepth.txt' using 1:2 title 'treeDepth Ordered' with linespoint, 'treeDepth.txt'  using 1:4 title 'O(n)' with linespoint
+
+plot 'treeDepth.txt' using 1:3 title 'treeDepth Random' with linespoint, 'treeDepth.txt' using 1:5 title 'Omega(log(n))' with linespoint
+
+

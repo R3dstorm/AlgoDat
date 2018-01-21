@@ -1,4 +1,22 @@
 
-The recursive loop "to_string_slicing" was a bit difficult: 
-When the function was returning from the last recursive call it restarted cycling .
-This was due to explicitly incrementing list depth by "current = current.leftChild" instead of taking the incrementation into the recursive function call "self.to_string_slicing(current.rightChild, output_string)". Using this bug fix "to_string_slicing" always returns back to the correct depth of the linked list.
+
+Discussion of Results:
+-Inserting 2¹⁰ to 2¹⁸ in ordered way (1, 2, ... , n):
+	inserting the numbers in an ordered way leeds to an degenerated binary tree with a depth of n
+	and a worse case insertion time of O(n)
+
+-Inserting 2¹⁰ to 2¹⁸ in random way (e.g. 5, n, ... , 1):
+	inserting the numbers randomly leeds to a less degenerated tree with a best case depth of log 		(n) and a best case insertion time of O(log(n))
+
+In terms of cache efficiency there shouldn't be a big difference between the two options.
+Due to the usage of a linked list the elements can be located next to each other in both cases.
+The locality of the linked list is part of the interpreter/compiler/os-Toolchain and is not defined by code.
+
+Notes:
+(The recursive loop "to_string_slicing" was a bit difficult: 
+When the function was returning from the last recursive call it restarted cycling.
+This was due to explicitly incrementing list depth by "current = current.leftChild" instead of taking the incrementation into the recursive function call "self.to_string_slicing(current.rightChild, output_string)". Using this bug fix "to_string_slicing" always returns back to the correct depth of the tree.)
+
+The actual measured runtime doesn't meet with the assumption of 'Ordered' O(n) and 'Random' O(log(n)).
+This might be due to the fact that the runtime for filling the complete tree (from 0 to n) is measured and not only for inserting an element into an tree with n elements. 
+Filling the complete tree should lead to a runtime of 'Ordered' O(n*n) and 'Random' O(n*log(n)).

@@ -4,6 +4,8 @@
 import argparse
 import random
 import timeit
+from math import log
+
 
 class Node:
     """ Implements a single node of a linked list.
@@ -15,9 +17,9 @@ class Node:
             ...
         TypeError: element must be a string
         """
-        if (not type(key) == int) and (not key is None):
+        if (not type(key) == int) and (key is not None):
             raise TypeError('key must be an integer')
-        if (not type(element) == str) and (not element is None):
+        if (not type(element) == str) and (element is not None):
             raise TypeError('element must be a string')
         self.key = key
         self.element = element
@@ -76,8 +78,8 @@ class BinarySearchTree:
                 if insert_key < current.key:
                     if current.leftChild is None:
                         current.leftChild = insert_node
-                        current_depth +=1
-                        break;
+                        current_depth += 1
+                        break
                     else:
                         current = current.leftChild
                         current_depth += 1
@@ -86,7 +88,7 @@ class BinarySearchTree:
                     if current.rightChild is None:
                         current.rightChild = insert_node
                         current_depth += 1
-                        break;
+                        break
                     else:
                         current = current.rightChild
                         current_depth += 1
@@ -99,7 +101,8 @@ class BinarySearchTree:
             self._depth = current_depth
 
     def lookup(self, search_key):
-        """Serach for given key. Return element with next bigger key if key is not found or reutrn "not found" if key is not found and there is no element with a bigger key.
+        """Search for given key. Return element with next bigger key if key is not found or return "not found"
+        if key is not found and there is no element with a bigger key.
 
         :param search_key: search for element with this key
         :return: element with this key or with next bigger key
@@ -190,7 +193,6 @@ class BinarySearchTree:
         """
         return self._depth
 
-
     def is_empty(self):
         """ Returns if the tree is empty (=true)
         :return: =true for empty tree
@@ -233,19 +235,19 @@ class BinarySearchTree:
         -> Test of "to_string" involves "to_string_slicing"
         """
         output_string += '[' + current.to_string()
-        output_string += (', left: ')
-        if (current.leftChild is not None):
-            #current = current.leftChild
+        output_string += ', left: '
+        if current.leftChild is not None:
+            # current = current.leftChild
             output_string = self.to_string_slicing(current.leftChild, output_string)
 
         else:
-            output_string += ('null')
-        output_string += (', right: ')
-        if (current.rightChild is not None):
-            #current = current.rightChild
+            output_string += 'null'
+        output_string += ', right: '
+        if current.rightChild is not None:
+            # current = current.rightChild
             output_string = self.to_string_slicing(current.rightChild, output_string)
         else:
-            output_string += ('null')
+            output_string += 'null'
 
         output_string += ']'
         return output_string
@@ -267,7 +269,7 @@ def setup_argument_parser():
 
     # Define argument parser.
     p = argparse.ArgumentParser(add_help=False,
-                                prog="binaraySearchTree.py",
+                                prog="binarySearchTree.py",
                                 usage="%(prog)s -inputSize -inputOrder",
                                 description=help_description,
                                 formatter_class=argparse.RawTextHelpFormatter)
@@ -281,13 +283,7 @@ def setup_argument_parser():
                                   dest="input_size",
                                   type=int,
                                   help="number of elements to input [n]",
-                                  required = True)
-    parse_group_args.add_argument("-inputOrder",
-                                  dest="input_order",
-                                  choices=["ordered", "unordered"],
-                                  default='ordered',
-                                  help="option to order input",
-                                  required=False)
+                                  required=True)
     parse_group_args.add_argument("-output",
                                   dest="output",
                                   choices=["runtime", "treeDepth"],
@@ -298,18 +294,17 @@ def setup_argument_parser():
 
 
 def generate_random_numbers(n):
-    return  random.sample(range(1, n+1), n)
+    return random.sample(range(1, n+1), n)
 
 
 def generate_numbers(n):
-    return [a for a in range(1,n+1)]
+    return [a for a in range(1, n+1)]
 
 
 def insert_data(data):
     tree = BinarySearchTree()
-    for i in range(0,len(data)):
+    for i in range(0, len(data)):
         tree.insert(data[i], "banana")
-    #print ("%s" %tree.to_string())
     return tree.depth()
 
 
@@ -319,18 +314,19 @@ if __name__ == "__main__":
     # Read the command line arguments.
     args = parser.parse_args()
 
-    #meassure runtime:
+    # Measure runtime:
     samples = 10  # The number of sample points to measure TODO change this to exp 2**n
     factor = args.input_size // samples
 
-    for i in range(1, samples + 1):
-        data_ordered = generate_numbers(i * factor)
-        data = generate_random_numbers(i * factor)
+    for i in range(10, args.input_size+1):
+        data_ordered = generate_numbers(2**i)
+        data = generate_random_numbers(2**i)
         if args.output == 'runtime':
             runtime_ordered = timeit.timeit(stmt=lambda: insert_data(data_ordered), number=1)
             runtime = timeit.timeit(stmt=lambda: insert_data(data), number=1)
-            print("%d \t %.5f \t %.5f" % ((i * factor), runtime_ordered, runtime))
+            print("%d \t %.5f \t %.5f \t %.5f \t %.5f"
+                  % ((2**i), runtime_ordered, runtime, 4*2**i/1000, 4*log(2**i, 2)/100))  # 4*log(2**i)/100=4/100*i
         else:
             depth_ordered = insert_data(data_ordered)
             depth = insert_data(data)
-            print('%d \t %d \t %d' % i * factor, depth_ordered, depth)
+            print('%d \t %d \t %d \t %d \t %d' % (2**i, depth_ordered, depth, 2**i, log(2**i, 2)))
