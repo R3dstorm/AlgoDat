@@ -24,11 +24,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graph.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="graph.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="63" column="17" lean-forward="false" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+            <state relative-caret-position="323">
+              <caret line="254" column="21" lean-forward="true" selection-start-line="254" selection-start-column="21" selection-end-line="254" selection-end-column="21" />
               <folding>
                 <element signature="e#20#29#0" expanded="true" />
               </folding>
@@ -36,72 +36,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="queue.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python3.5/queue.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-397">
-              <caret line="175" column="0" lean-forward="false" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="re.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python3.5/re.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="172" column="0" lean-forward="false" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shortestPaths.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="shortestPaths.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/shortestPaths.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="apport_python_hook.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python3/dist-packages/apport_python_hook.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="codecs.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python3.5/codecs.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5544">
-              <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_bootlocale.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python3.5/_bootlocale.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="doctest.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python3.5/doctest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26244">
-              <caret line="1470" column="0" lean-forward="false" selection-start-line="1470" selection-start-column="0" selection-end-line="1470" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="21">
+              <caret line="55" column="22" lean-forward="true" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+              <folding>
+                <element signature="e#20#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,8 +70,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/shortestPaths.py" />
         <option value="$PROJECT_DIR$/graph.py" />
+        <option value="$PROJECT_DIR$/shortestPaths.py" />
       </list>
     </option>
   </component>
@@ -204,7 +146,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Doctest_graph">
+  <component name="RunManager" selected="Python tests.Doctest_shortestPaths">
     <configuration name="Debug" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -241,9 +183,28 @@
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
     </configuration>
-    <list size="2">
+    <configuration name="Doctest_shortestPaths" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="/usr/bin/python3.5" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="shortestPaths" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/shortestPaths.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+    </configuration>
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.Debug" />
       <item index="1" class="java.lang.String" itemvalue="Python tests.Doctest_graph" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Doctest_shortestPaths" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -263,35 +224,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Doctest_graph - 2018.01.31 at 19h 49m 32s.xml">
+    <history-entry file="Doctest_graph - 2018.01.31 at 22h 31m 17s.xml">
       <configuration name="Doctest_graph" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest_graph - 2018.01.31 at 19h 50m 14s.xml">
+    <history-entry file="Doctest_graph - 2018.01.31 at 22h 31m 59s.xml">
       <configuration name="Doctest_graph" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest_graph - 2018.01.31 at 19h 50m 35s.xml">
+    <history-entry file="Doctest_graph - 2018.01.31 at 22h 33m 54s.xml">
       <configuration name="Doctest_graph" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest_graph - 2018.01.31 at 19h 51m 34s.xml">
+    <history-entry file="Doctest_graph - 2018.01.31 at 22h 42m 11s.xml">
       <configuration name="Doctest_graph" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest_graph - 2018.01.31 at 19h 52m 16s.xml">
+    <history-entry file="Doctest_graph - 2018.01.31 at 22h 42m 20s.xml">
       <configuration name="Doctest_graph" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest_graph - 2018.01.31 at 19h 52m 29s.xml">
-      <configuration name="Doctest_graph" configurationId="tests" />
+    <history-entry file="Doctest_shortestPaths - 2018.01.31 at 22h 31m 12s.xml">
+      <configuration name="Doctest_shortestPaths" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest_graph - 2018.01.31 at 19h 52m 50s.xml">
-      <configuration name="Doctest_graph" configurationId="tests" />
+    <history-entry file="Doctest_shortestPaths - 2018.01.31 at 22h 38m 21s.xml">
+      <configuration name="Doctest_shortestPaths" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest_graph - 2018.01.31 at 19h 58m 22s.xml">
-      <configuration name="Doctest_graph" configurationId="tests" />
+    <history-entry file="Doctest_shortestPaths - 2018.01.31 at 22h 38m 49s.xml">
+      <configuration name="Doctest_shortestPaths" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest_graph - 2018.01.31 at 19h 58m 47s.xml">
-      <configuration name="Doctest_graph" configurationId="tests" />
+    <history-entry file="Doctest_shortestPaths - 2018.01.31 at 22h 42m 25s.xml">
+      <configuration name="Doctest_shortestPaths" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest_graph - 2018.01.31 at 20h 00m 05s.xml">
-      <configuration name="Doctest_graph" configurationId="tests" />
+    <history-entry file="Doctest_shortestPaths - 2018.01.31 at 22h 43m 18s.xml">
+      <configuration name="Doctest_shortestPaths" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -303,7 +264,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3875" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3875" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -323,19 +284,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/graph.py</url>
-          <line>203</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/graph.py</url>
-          <line>223</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="16" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -370,7 +319,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#20#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -434,7 +385,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#20#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -476,7 +429,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#20#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -510,13 +465,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="785" column="8" lean-forward="false" selection-start-line="785" selection-start-column="8" selection-end-line="785" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/docrunner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2139">
-          <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -568,14 +516,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.graph">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python3.5/queue.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-397">
@@ -584,20 +524,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shortestPaths.py">
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/docrunner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="143">
+          <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.graph">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/graph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="63" column="17" lean-forward="false" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+        <state relative-caret-position="323">
+          <caret line="254" column="21" lean-forward="true" selection-start-line="254" selection-start-column="21" selection-end-line="254" selection-end-column="21" />
           <folding>
             <element signature="e#20#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shortestPaths.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="55" column="22" lean-forward="true" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+          <folding>
+            <element signature="e#20#43#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -223,6 +223,42 @@ class Graph:
             else:
                 break
 
+    def get_node_cost(self, node):
+        return self._nodes[node].get_distance()
+
+    def generate_map_data(self, end_node, color, label):
+        """
+        Returns a "MapBBCode" formatted string starting from end
+        Format: <lat11>,<lon11> <lat12>,<lon12> ... <lat1n>,<lon1n>(color/label1);
+        :return: MapBBCode formatted string
+
+        >>> graph = Graph()
+        >>> graph.read_graph_from_file('test.graph')
+        >>> graph.compute_shortest_paths(0)
+        >>> graph.generate_map_data(3, 'blue', 'route66')
+        '49.265800,7.311790 49.266600,7.311080 49.340600,7.299970 49.341800,7.300890(blue|route66)'
+
+        """
+        string = ''
+        current_node = self._nodes[end_node]
+        while True:
+            temp = '%f,%f' % (current_node.get_latitude(), current_node.get_longitude())
+            string += temp
+            # Set next node for current_node:
+            next_node = self._nodes[current_node.get_traceback_arc().tail_node_id]
+            if (next_node != current_node):
+                current_node = next_node
+                string += ' '
+            else:
+                break
+        string = ''.join([string, '(',color, '|', label, ')'])
+        return string
+
+    def reset_graph(self):
+        for node in self._nodes:
+            node.reset_node()
+
+
     def __repr__(self):
         """ Define object's string representation.
 
@@ -255,6 +291,17 @@ class Node:
         """ Define object's string representation."""
         return "%i" % self._id
 
+    def reset_node(self):
+        self._traceback_arc = Arc(0, 0, 0, 0)
+        self._settled = False
+        self._distance = -1
+
+    def get_latitude(self):
+        return self._latitude
+
+    def get_longitude(self):
+        return self._longitude
+
     def settle(self):
         self._settled = True
 
@@ -270,6 +317,8 @@ class Node:
     def set_traceback_arc(self, arc):
         self._traceback_arc = arc
 
+    def get_traceback_arc(self):
+        return self._traceback_arc
 
 class Arc:
 
