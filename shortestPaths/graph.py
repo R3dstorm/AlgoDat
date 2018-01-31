@@ -3,6 +3,7 @@
 import re
 import queue
 
+
 class Graph:
 
     def __init__(self):
@@ -60,7 +61,7 @@ class Graph:
                               int(cols[3]))
                     # Append arc to tail node's adjacency list.
                     self._adjacency_lists[tail_node_id].append(arc)
-        f.closed
+        f.close()
 
     def get_num_nodes(self):
         """Return number of nodes in graph."""
@@ -94,7 +95,7 @@ class Graph:
         num_marked_nodes = 1  # Store number of reachable nodes.
         # While there are still nodes to visit.
         while len(current_level) > 0:
-            # Store nodes that are conntected to current_level nodes.
+            # Store nodes that are connected to current_level nodes.
             next_level = []
             # Go through all current_level nodes.
             for curr_node_id in current_level:
@@ -156,7 +157,7 @@ class Graph:
         """
 
         # Step 1: find starting point, spanning largest component from all nodes:
-        lcc = (0,[])
+        lcc = (0, [])
         start_node_id_lcc = 0
         for current_node in range(0, self._num_nodes):
             temp_size = self.compute_reachable_nodes(current_node)
@@ -165,55 +166,62 @@ class Graph:
                 start_node_id_lcc = current_node
         # Step 1 Improvements: only scan points, that have not been marked yet...
 
-
         # Step 2: return list with all nodes resulting from MVS within the function argument
         result = []
-        for i in range (0,len(lcc[1])):
+        for i in range(0, len(lcc[1])):
             if lcc[1][i] == 1:
                 result.append(i)
         return result
 
     def compute_shortest_paths(self, start_node_id):
-        """Compute the shortest paths for a given start node.
-
-        Compute the shortest paths from the given start node
+        """Compute the shortest paths for a given start node
         using Dijkstra's algorithm.
+
+        >>> graph = Graph()
+        >>> graph.read_graph_from_file('test.graph')
+        >>> graph.compute_shortest_paths(0)
+        >>> ['%d(%d)' % (node._id, node._distance) for node in graph._nodes]
+        ['0(0)', '1(30)', '2(50)', '3(100)', '4(-1)']
+        >>> [repr(node._traceback_arc) for node in graph._nodes]
+        ['0->0(0)', '0->1(30)', '1->2(20)', '2->3(50)', '0->0(0)']
+        >>> graph = Graph()
+        >>> graph.read_graph_from_file('test3.graph')
+        >>> graph.compute_shortest_paths(0)
+        >>> ['%d(%d)' % (node._id, node._distance) for node in graph._nodes]
+        ['0(0)', '1(70)', '2(50)', '3(60)']
+        >>> [repr(node._traceback_arc) for node in graph._nodes]
+        ['0->0(0)', '3->1(10)', '0->2(50)', '2->3(10)']
         """
         node_queue = queue.PriorityQueue(self._num_nodes)
 
         # Start of search with start node:
-        current_tail = self._nodes[start_node_id]
-        current_tail._settled = True
-        current_tail._distance = 0
-            #node_queue.put_nowait((0, current_node))
-            #self._nodes[start_node_id].settle()
-            #self._nodes[start_node_id].define_distance(0)
+        current_node = self._nodes[start_node_id]
+        current_node._settled = True
+        current_node._distance = 0
 
-        # Insert next neighbored nodes with smallest td(u) into priority queue
-        smallest_distance = 0xFFFFFFFF
+        # Insert next neighbored nodes into priority queue
         current_distance = 0
         while True:
-            blubblub = self._adjacency_lists[current_tail][0]
-            size = len(self._adjacency_lists[current_tail[0]])
+            size = len(self._adjacency_lists[int(repr(current_node))])
             for neighbor in range(size):
-                current_arc = self._adjacency_lists[current_tail][neighbor]
-                current_arc.costs += current_distance       # Passing costs to next node
-                node_queue.put_nowait((current_arc.cost, current_arc))
-            #Dequeue element
-            current_arc = node_queue.get_nowait()
-            self._nodes[current_arc[0]].settle()
-            current_tail = current_arc[0]
-
-            #neighbor_node = self._adjacency_lists[current_tail][neighbor]
-
-            #node_queue.put_nowait((neighbor_node.get_distance(),neighbor_node))
-
-            #distance = self._adjacency_lists[start_node_id][neighbor_node]
-            #if distance < smallest_distance:
-            #    smallest_distance = distance
-        blub = 1
-
-
+                current_arc = self._adjacency_lists[int(repr(current_node))][neighbor]
+                next_node = self._nodes[current_arc.head_node_id]
+                if not next_node.is_settled():
+                    # Store traceback information
+                    next_node.set_traceback_arc(current_arc)
+                # insert if node has not been inserted, or inserted with a bigger key
+                if (next_node.get_distance() == -1) or next_node.get_distance() > current_distance + current_arc.costs:
+                    if not next_node.is_settled():  # Insert node if not already settled
+                        next_node.set_distance(current_distance + current_arc.costs)  # Passing costs to next node
+                        node_queue.put_nowait((next_node.get_distance(), next_node))
+            if not node_queue.empty():
+                current_node = node_queue.get_nowait()[1]  # Deque element and remove key-information
+                if not current_node.is_settled():  # Reject outdated (higher distance) nodes from the queue
+                    # Settle node
+                    current_node.settle()
+                    current_distance = current_node.get_distance()
+            else:
+                break
 
     def __repr__(self):
         """ Define object's string representation.
@@ -239,22 +247,28 @@ class Node:
         self._id = node_id
         self._latitude = latitude
         self._longitude = longitude
-        self._traceback_arc = Arc(0,0,0,0)
+        self._traceback_arc = Arc(0, 0, 0, 0)
         self._settled = False
-        self._distance = -1 # Start with negative distance
+        self._distance = -1  # Distance from a certain starting point; Init with negative distance
 
     def __repr__(self):
         """ Define object's string representation."""
-        return "%i" % (self._id)
+        return "%i" % self._id
 
     def settle(self):
         self._settled = True
 
-    def define_distance(self, distance):
+    def is_settled(self):
+        return self._settled is True
+
+    def set_distance(self, distance):
         self._distance = distance
 
     def get_distance(self):
         return self._distance
+
+    def set_traceback_arc(self, arc):
+        self._traceback_arc = arc
 
 
 class Arc:
