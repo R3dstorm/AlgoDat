@@ -43,7 +43,7 @@ def evaluate_graph(graph_file, start_point, end_point, generate_map):
     runtime_output.write("Shortest path:\n")
     runtime_output.write("Traveling distance of %.2f km, Traveling time of %d hour(s) %d minute(s); Runtime for computing: %.2f s \n\n" % (travel_distance, travel_time[0], travel_time[1], runtime))
     if generate_map is True:
-        active_graph.print_to_map_data(end_point, 'blue', 'shortest path', True)
+        active_graph.print_to_map_data(end_point, 'blue', 'shortest path', False)
 
     # 2. Travel time automotive
     active_graph.set_arc_costs_to_travel_time(130)
@@ -62,7 +62,7 @@ def evaluate_graph(graph_file, start_point, end_point, generate_map):
     runtime_output.write("Longest path by car:\n")
     runtime_output.write("Traveling distance of %.2f km, Traveling time of %d hour(s) %d minute(s)\n\n" % (travel_distance_long, travel_time_long[0], travel_time_long[1]))
     if generate_map is True:
-        active_graph.print_to_map_data(end_point, 'blue', 'traveling by car', True)
+        active_graph.print_to_map_data(end_point, 'red', 'traveling by car', False)
 
 
     # 3. Travel time moped
@@ -82,7 +82,7 @@ def evaluate_graph(graph_file, start_point, end_point, generate_map):
     runtime_output.write("Longest path by car:\n")
     runtime_output.write("Traveling distance of %.2f km, Traveling time of %d hour(s) %d minute(s)\n" % (travel_distance_long, travel_time_long[0], travel_time_long[1]))
     if generate_map is True:
-        active_graph.print_to_map_data(end_point, 'blue', 'traveling by moped', True)
+        active_graph.print_to_map_data(end_point, 'green', 'traveling by moped', True)
 
     runtime_output.close()
 
