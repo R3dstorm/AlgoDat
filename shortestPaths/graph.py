@@ -2,7 +2,7 @@
 
 import re
 import queue
-
+import os
 
 class Graph:
 
@@ -183,14 +183,14 @@ class Graph:
         >>> ['%d(%d)' % (node._id, node._distance) for node in graph._nodes]
         ['0(0)', '1(30)', '2(50)', '3(100)', '4(-1)']
         >>> [repr(node._traceback_arc) for node in graph._nodes]
-        ['0->0(0)', '0->1(30)', '1->2(20)', '2->3(50)', '0->0(0)']
+        ['None', '0->1(30)', '1->2(20)', '2->3(50)', 'None']
         >>> graph = Graph()
         >>> graph.read_graph_from_file('test3.graph')
         >>> graph.compute_shortest_paths(0)
         >>> ['%d(%d)' % (node._id, node._distance) for node in graph._nodes]
         ['0(0)', '1(70)', '2(50)', '3(60)']
         >>> [repr(node._traceback_arc) for node in graph._nodes]
-        ['0->0(0)', '3->1(10)', '0->2(50)', '2->3(10)']
+        ['None', '3->1(10)', '0->2(50)', '2->3(10)']
         """
         node_queue = queue.PriorityQueue(self._num_nodes)
 
@@ -245,18 +245,83 @@ class Graph:
             temp = '%f,%f' % (current_node.get_latitude(), current_node.get_longitude())
             string += temp
             # Set next node for current_node:
-            next_node = self._nodes[current_node.get_traceback_arc().tail_node_id]
-            if (next_node != current_node):
-                current_node = next_node
+
+            if current_node.get_traceback_arc() is not None:
+                current_node = self._nodes[current_node.get_traceback_arc().tail_node_id]
                 string += ' '
             else:
                 break
-        string = ''.join([string, '(',color, '|', label, ')'])
+        string = ''.join([string, '(', color, '|', label, ')'])
         return string
 
     def reset_graph(self):
         for node in self._nodes:
             node.reset_node()
+
+    def print_to_map_data(self, end_node, color, label, last):
+        """
+        Prints a "MapBBCode" formatted string starting from end to "output.map"
+        """
+        MAP_OUT = open("output.map", "a+")
+        if os.stat("output.map").st_size is 0:
+            MAP_OUT.write('[map]\n')
+        else:
+            MAP_OUT.write(';\n')
+        string = ''
+        current_node = self._nodes[end_node]
+        while True:
+            temp = '%f,%f' % (current_node.get_latitude(), current_node.get_longitude())
+            MAP_OUT.write(temp)
+            # Set next node for current_node:
+            if current_node.get_traceback_arc() is not None:
+                current_node = self._nodes[current_node.get_traceback_arc().tail_node_id]
+                MAP_OUT.write(' ')
+            else:
+                break
+        string = ''.join(['(', color, '|', label, ')'])
+        MAP_OUT.write(string)
+        if last is True:
+            MAP_OUT.write('\n[/map]')
+        MAP_OUT.close()
+
+    def recalculate_travel_costs(self, end_node):
+        """ Recalculates the costs (distance or time) for already calculated shortest path map
+        # FIXME: returning wrong values--> use costs of adjacency elements, not node costs!....
+        :param end_node:
+        :return:
+
+        >>> graph = Graph()
+        >>> graph.read_graph_from_file('test3.graph')
+        >>> graph.compute_shortest_paths(0)
+        >>> graph.recalculate_travel_costs(1)
+        70
+        """
+        travel_costs = 0
+        current_node = self._nodes[end_node]
+        while True:
+            if current_node.get_traceback_arc() is not None:
+                travel_costs += current_node.get_traceback_arc().costs
+                current_node = self._nodes[current_node.get_traceback_arc().tail_node_id]
+            else:
+                break
+        return travel_costs
+
+    def calculate_furthest_node(self):
+        """ returns the node id of the furthest node
+
+        :return:
+
+        >>> graph = Graph()
+        >>> graph.read_graph_from_file('test3.graph')
+        >>> graph.compute_shortest_paths(0)
+        >>> graph.calculate_furthest_node()
+        (1, 70)
+        """
+        furthest_node = Node(0, 0, 0)
+        for node in self._nodes:
+            if (node > furthest_node):
+                furthest_node = node
+        return int(repr(furthest_node)), furthest_node.get_distance()
 
 
     def __repr__(self):
@@ -276,6 +341,15 @@ class Graph:
         else:
             return "[]"
 
+    def load_dummy_data(self, number_elements):
+        for i in range(0, number_elements):
+            node = Node(0,0,0)
+            arc = Arc(0,0,0,0)
+            self._nodes.append(node)
+            self._adjacency_lists.append([])
+            for j in range(0, 3):
+                self._adjacency_lists[i].append(arc)
+
 
 class Node:
 
@@ -283,7 +357,7 @@ class Node:
         self._id = node_id
         self._latitude = latitude
         self._longitude = longitude
-        self._traceback_arc = Arc(0, 0, 0, 0)
+        self._traceback_arc = None
         self._settled = False
         self._distance = -1  # Distance from a certain starting point; Init with negative distance
 
@@ -291,8 +365,11 @@ class Node:
         """ Define object's string representation."""
         return "%i" % self._id
 
+    def __lt__(self, other):
+        return self._distance < other._distance
+
     def reset_node(self):
-        self._traceback_arc = Arc(0, 0, 0, 0)
+        self._traceback_arc = None
         self._settled = False
         self._distance = -1
 

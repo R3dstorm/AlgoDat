@@ -1,0 +1,14 @@
+Traveling from Faculty of Engineering to Nuernberg:
+
+Shortest path:
+Traveling distance of 331.76 km, Traveling time of 4 hour(s) 4 minute(s); Runtime for computing: 94.33 s 
+
+Fastest path by car:
+Traveling distance of 369.48 km, Traveling time of 2 hour(s) 56 minute(s); Runtime for computing: 107.01 s 
+Longest path by car:
+Traveling distance of 567.77 km, Traveling time of 4 hour(s) 56 minute(s)
+
+Fastest path by moped:
+Traveling distance of 351.99 km, Traveling time of 3 hour(s) 33 minute(s); Runtime for computing: 105.93 s 
+Longest path by car:
+Traveling distance of 552.95 km, Traveling time of 5 hour(s) 42 minute(s)
