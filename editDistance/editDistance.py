@@ -32,18 +32,20 @@ def compute_ed_recursively(x, y):
 def compute_ed_via_table(x, y):
     """ Compute edit distance via dynamic programming table.
 
+    >>> compute_ed_via_table("DINO", "GRAU")
+    4
+    >>> compute_ed_via_table("ABCDEFGHIJiuKLMNOPQRSTUVkl", "ABCDEFGHIJKLMNOjiPQRSTUVH")
+    6
     >>> compute_ed_via_table("", "")
     0
-    >>> compute_ed_via_table("RAUM", "GRAU")
-    2
-    >>> compute_ed_via_table("ABCDEFGHIJKLMNOPQRSTUV", "ABCDEFGHIJKLMNOPQRSTUVK")
-    0
+
+
     """
     # TODO put all of this into one/two big loop(s)
     # Create empty Table
     backup_x = x
     backup_y = y
-    ed_table = [[TableElement() for a in range(len(x)+1)] for b in range(len(y)+1)]
+    ed_table = [[TableElement() for a in range(len(y)+1)] for b in range(len(x)+1)]
 
     # Fill table
     for j in range(len(y), -1, -1):
@@ -75,13 +77,13 @@ def compute_ed_via_table(x, y):
                     ed_table[i+1][j+1].cost = ed_table[i][j].cost
                 else:
                     ed_table[i + 1][j + 1].cost = ed_table[i][j].cost + 1
-        if (j < len(backup_x)):
+        if (j < len(backup_y)):
             ed_table[0][j+1].cost = ed_table[0][j].cost + 1
 
     # Find shortest Path through Table
 
 
-    return ed_table[len(backup_x) - 1][len(backup_y) - 1].cost
+    return ed_table[len(backup_x)][len(backup_y)].cost
 
 
 

@@ -14,8 +14,8 @@
       <file leaf-file-name="editDistance.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/editDistance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="53" column="18" lean-forward="true" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+            <state relative-caret-position="205">
+              <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -168,34 +168,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Doctest - 2018.03.01 at 20h 05m 46s.xml">
+    <history-entry file="Doctest - 2018.03.01 at 21h 06m 39s.xml">
       <configuration name="Doctest" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest - 2018.03.01 at 20h 06m 55s.xml">
+    <history-entry file="Doctest - 2018.03.01 at 21h 07m 15s.xml">
       <configuration name="Doctest" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest - 2018.03.01 at 20h 42m 29s.xml">
+    <history-entry file="Doctest - 2018.03.01 at 21h 18m 04s.xml">
       <configuration name="Doctest" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest - 2018.03.01 at 20h 42m 54s.xml">
+    <history-entry file="Doctest - 2018.03.01 at 21h 20m 58s.xml">
       <configuration name="Doctest" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest - 2018.03.01 at 20h 43m 01s.xml">
+    <history-entry file="Doctest - 2018.03.01 at 21h 20m 59s.xml">
       <configuration name="Doctest" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest - 2018.03.01 at 20h 45m 36s.xml">
+    <history-entry file="Doctest - 2018.03.01 at 21h 21m 15s.xml">
       <configuration name="Doctest" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest - 2018.03.01 at 20h 46m 11s.xml">
+    <history-entry file="Doctest - 2018.03.01 at 21h 21m 25s.xml">
       <configuration name="Doctest" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest - 2018.03.01 at 20h 46m 17s.xml">
+    <history-entry file="Doctest - 2018.03.01 at 21h 21m 32s.xml">
       <configuration name="Doctest" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest - 2018.03.01 at 20h 49m 33s.xml">
+    <history-entry file="Doctest - 2018.03.01 at 21h 21m 41s.xml">
       <configuration name="Doctest" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest - 2018.03.01 at 20h 53m 25s.xml">
+    <history-entry file="Doctest - 2018.03.01 at 21h 22m 50s.xml">
       <configuration name="Doctest" configurationId="tests" />
     </history-entry>
   </component>
@@ -208,12 +208,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -231,25 +231,20 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/editDistance.py</url>
-          <line>99</line>
+          <line>101</line>
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/editDistance.py</url>
-          <line>106</line>
+          <line>108</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/editDistance.py</url>
-          <line>44</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/editDistance.py</url>
-          <line>48</line>
-          <option name="timeStamp" value="15" />
+          <line>85</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="16" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -280,8 +275,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/editDistance.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="53" column="18" lean-forward="true" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+        <state relative-caret-position="205">
+          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
           <folding />
         </state>
       </provider>
