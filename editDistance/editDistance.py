@@ -124,7 +124,7 @@ def compute_ed_via_table_master(x, y):
     return matrix[m][n]
 
 
-def compute_max_common_range(x,y):
+def compute_max_common_range(x, y):
     """
     compute the maximum range of characters common in both strings.
     Routine checks every diagonal neighbored cell between the strings in the table
@@ -142,13 +142,15 @@ def compute_max_common_range(x,y):
     range_counter = 0
     max_range = 0
 
-    for i in range(1, m + 1):
-        for j in range(1, n + 1):
-            if x[i-1] != y[j-1]:
-                range_counter = 0
-            else:
-                range_counter += 1
-                max_range = max(range_counter, max_range)
+    for offset in range(-m, m):
+        for yi in range(0, n):
+            xi = offset + yi
+            if 0 <= xi < m:
+                if x[xi] != y[yi]:
+                    range_counter = 0
+                else:
+                    range_counter += 1
+                    max_range = max(range_counter, max_range)
     return max_range
 
 
